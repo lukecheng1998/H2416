@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Homework 2?}
+\author{Luke Cheng}
+\date{September 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Luke's Questions}
+
+\begin{itemize}
+    \item 9. A retail establishment accepts either the American Express or the VISA credit card. A total of 24 percent of its customers carry an American Express card, 61 percent carry a VISA card, and 11 percent carry both cards. What percentage of its customers carry a credit card that the establishment will accept?
+    \\Solution: 
+    \\American Express = AE | Visa = V
+    \\This means $$P(AE) = 24$$ $$P(V) = 61$$ $$P(AE \cap V) = 11$$
+    $$\\P(AE \cup V) = P(AE) + P(V) - P(AE \cap V)$$
+    $$\\P(AE \cup V) = 61 + 24 - 11$$
+    $$\\P(AE \cup V) = 74 -> 0.74$$
+    This means that there is a 74 percent chance that the customers will carry a credit card that the establishment will accept.
+    \item 17. Twenty five people, consisting of 15 women and 10 men are lined up in a random order. Find the probability that the ninth woman to appear is in position 17. That is, find the probability there are 8 women in positions 1 thru 16 and a woman in position 17.
+    \\Solution: 
+    \\15 spot from 25 positions for all women is
+    $$25!/(15!*10!)$$
+    \\Then figure out the 17th position is picked by the 9th women with 8 women before that and 6 after that position. This becomes:
+    $$16!/(8!*8!)$$ $$8!/(6!*2!)$$
+    Thus we will need to multiply these two together and divide it by the total.
+    $$(16!/(8!*8!) * 8!/(6!*2!))/(25!/(15!*10!)) = 0.1102$$
+    \item 26. The game of craps is played as follows: A player rolls two dice. If the sum of the dice is either a 2,
+    3, or 12, the player loses; if the sum is either a 7 or an 11, the player wins. If the outcome is anything else, the player continues to roll the dice until she rolls either the initial outcome or a 7. If the 7 comes first, the player loses, whereas if the initial outcome reoccurs before the 7 appears, the player wins. Compute the probability of a player winning at craps.
+    \\Solution:
+    \\Probability of Winning craps given the rules, where n is the outcome: $$\sum_{n=1}^{\infty}P(E_n)$$
+    $$\sum_{n=1}^{\infty}P(E_2) = 0$$
+    $$\sum_{n=1}^{\infty}P(E_3) = 0$$
+    $$\sum_{n=3}^{\infty}P(E_4) = 3/36 * 0 *(3/36)^2 + 27/36*(3/36)^2 + (27/36)^2+3/36.... \infty$$
+    $$\sum_{n=1}^{\infty}P(E_4) = 1/36$$
+    $$\sum_{n=1}^{\infty}P(E_5) = 4/36 * 0 *(4/36)^2 + 26/36*(4/36)^2 + (26/36)^2+4/36.... \infty$$
+    $$\sum_{n=1}^{\infty}P(E_5) = 2/45$$
+    $$\sum_{n=1}^{\infty}P(E_6) = 5/36 * 0 *(5/36)^2 + 25/36*(5/36)^2 + (25/36)^2+5/36.... \infty$$
+    $$\sum_{n=1}^{\infty}P(E_6) = 25/396$$
+    $$\sum_{n=1}^{\infty}P(E_7) = 6/36 * 0 *(6/36)^2 + 24/36*(6/36)^2 + (24/36)^2+6/36.... \infty$$
+    $$\sum_{n=1}^{\infty}P(E_7) = 6/36$$
+    This rule is the same for the rest of the outcomes.
+    $$\sum_{n=1}^{\infty}P(E_8) = 25/396$$
+    $$\sum_{n=1}^{\infty}P(E_9) = 6/36$$
+    $$\sum_{n=1}^{\infty}P(E_{10}) = 1/36$$
+    $$\sum_{n=1}^{\infty}P(E_{11}) = 2/36$$
+    $$\sum_{n=1}^{\infty}P(E_{12}) = 0$$
+    As a result this probability is...$$\sum_{n=2}^{12}P(E_n) = (0 + 0 + 1/36 + 2/45 + 25/396 + 6/36 + 25/396 + 2/36 + 1/36 + 2/36 + 0)$$
+    $$=0.492929$$
+    \item37. An instructor gives her class a set of 10 problems with the information that the final exam will consist of a random selection of 5 of them. If a student has figured out how to do 7 of the problems, what is the probability that he or she will answer correctly
+    \\a. all 5 problems?
+    \\b. at least 4 of the problems?
+    \\Solution: 
+    \\a. $$P(5 correct) = {7 \choose 5}/{10\choose 5}$$
+    $$ 21/252 = 0.0833$$
+    \\b. P(at least 4 correct) = P(4 correct) + P(5 correct)
+    \\$$=({7 \choose 4} * {3 \choose 1})/{10 \choose 5} + {7 \choose 5}/{10 \choose 5}$$
+    \\$$= (353 *3)/252 + 21/252$$
+    \\$$105/252 + 21/252$$
+    \\$$126/252 = 0.5$$
+    \item 48. Given 20 people, what is the probability that among the 12 months in the year, there are 4 months containing exactly 2 birthdays and 4 containing exactly 3 birthdays?
+    \\Solution:
+    \\Outcome $$S(x_1,x_2,x_3 ... 20)$$ within 12 months
+    \\Probability of where this happens is $$20 \choose {2, 2, 2, 2, 3, 3, 3, 3}$$
+    \\We will also need to include 12 choose 8 months and count the partition of the 8 months to the ones with two birthdays. As a result we will get.
+    \\$$(20 \choose {2, 2, 2, 2, 3, 3, 3, 3}$$$$ * ({12 \choose 8} * {8 \choose 4}$$
+    \\$$20!/(2^4 * 3^4) * 12!/(8!4!)*8!/(4!4!) = 0.01697$$
+\end{itemize}
+\end{document}
